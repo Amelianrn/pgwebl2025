@@ -15,7 +15,7 @@ class PolylinesModel extends Model
 
 {
     $polylines = $this
-    ->select(DB::raw('st_asgeojson(geom) as geom, name, description,
+    ->select(DB::raw('st_asgeojson(geom) as geom, name, description,image,
     st_length(geom, true) as length_m, st_length(geom, true)/1000 as length_km, created_at, updated_at'))
     ->get();
 
@@ -31,6 +31,7 @@ class PolylinesModel extends Model
             'properties' => [
                 'name' => $polyline->name,
                 'description' => $polyline->description,
+                'image' => $polyline->image,
                 'length_m' => $polyline->length_m,
                 'length_km' => $polyline->length_km,
                 'created_at' => $polyline->created_at,

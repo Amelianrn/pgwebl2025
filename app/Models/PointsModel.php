@@ -15,7 +15,7 @@ class PointsModel extends Model
 
 {
     $points = $this
-    ->select(DB::raw('st_asgeojson(geom) as geom, name, description, created_at,
+    ->select(DB::raw('st_asgeojson(geom) as geom, name, description, image, created_at,
     updated_at'))
     ->get();
 
@@ -32,6 +32,7 @@ class PointsModel extends Model
                 'name' => $point->name,
                 'description' => $point->description,
                 'created_at' => $point->created_at,
+                'image'=> $point->image,
                 'updated_at' => $point->updated_at,
             ],
         ];
