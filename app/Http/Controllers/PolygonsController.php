@@ -134,11 +134,14 @@ class PolygonsController extends Controller
             $image->move('storage/images', $name_image);
 
             // Delete old image file
-            if ($old_image !=null) {
-                if (file_exists('. /storage/images/' . $old_image)) {
-            unlink(' ./storage/images/' .$old_image) ;
-         }
-         }
+            if ($old_image != null) {
+                $old_image_path = public_path('storage/images/' . $old_image);
+                if (file_exists($old_image_path)) {
+                    unlink($old_image_path);
+                }
+            }
+
+
           } else {
             $name_image = $old_image;
           }
