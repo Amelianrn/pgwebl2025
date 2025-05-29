@@ -267,7 +267,8 @@
                     "<button type='submit' class='btn btn-sm btn-danger' onclick='return confirm(\"Yakin akan dihapus\")'>" +
                         "<i class='fa-solid fa-trash-can'></i>" +
                     "</button>" +
-                "</form>";
+                "</form>" +
+                 "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>";
                 layer.on({
                     click: function(e) {
                         point.bindPopup(popupContent);
@@ -303,7 +304,8 @@
                     '@csrf' +
                     '@method("DELETE")' +
                 "<button type='submit' class='btn btn-sm btn-danger' onclick='return confirm(\"Yakin akan dihapus\")'><i class='fa-solid fa-trash-can'></i></button>" +
-                "</form>";
+                "</form>" +
+                 "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>";
 
                 layer.bindPopup(popupContent);
                 layer.bindTooltip(feature.properties.name);
@@ -336,7 +338,8 @@
                     '@csrf' +
                     '@method("DELETE")' +
                 "<button type='submit' class='btn btn-sm btn-danger' onclick='return confirm(\"Yakin akan dihapus?\")'><i class='fa-solid fa-trash-can'></i></button>" +
-                "</form>";
+                "</form>" +
+                 "<br>" + "<p>Dibuat Oleh: " + feature.properties.user_created + "</p>";
 
                 layer.bindPopup(popupContent);
                 layer.bindTooltip(feature.properties.name);
