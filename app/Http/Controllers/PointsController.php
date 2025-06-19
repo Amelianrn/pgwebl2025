@@ -180,7 +180,7 @@ class PointsController extends Controller
         $imagefile = $this->points->find($id)->image;
 
         if (!$this->points->destroy($id)) {
-            return redirect()->route('map')->with('eror', 'Point failed to delete');
+            return redirect()->route('map')->with('eror', 'Points failed to delete');
         }
 
         //Delete image file
@@ -190,7 +190,7 @@ class PointsController extends Controller
             }
         }
 
-        return redirect()->route('map')->with('success', 'Point has been deleted');
+        return redirect()->route('map')->with('success', 'Points has been deleted');
 
     }
 }
